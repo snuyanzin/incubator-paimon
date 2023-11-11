@@ -33,7 +33,7 @@ under the License.
 
     <properties>
         <spark.version>3.4.1</spark.version>
-        <paimon.connector.module.config>
+        <extraJavaTestArgs.config>
             -XX:+IgnoreUnrecognizedVMOptions
             --add-opens=java.base/java.lang=ALL-UNNAMED
             --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
@@ -49,7 +49,7 @@ under the License.
             --add-opens=java.base/sun.security.action=ALL-UNNAMED
             --add-opens=java.base/sun.util.calendar=ALL-UNNAMED
             -Djdk.reflect.useDirectMethodHandle=false
-        </paimon.connector.module.config>
+        </extraJavaTestArgs.config>
     </properties>
 
     <dependencies>
@@ -267,7 +267,7 @@ under the License.
                 <configuration>
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     <junitxml>.</junitxml>
-                    <argLine>-ea -Xmx4g -Xss4m -XX:MaxMetaspaceSize=2g -XX:ReservedCodeCacheSize=${CodeCacheSize} ${paimon.surefire.baseArgLine} -Dio.netty.tryReflectionSetAccessible=true</argLine>
+                    <argLine>-ea -Xmx4g -Xss4m -XX:MaxMetaspaceSize=2g -XX:ReservedCodeCacheSize=${CodeCacheSize} ${extraJavaTestArgs.config} -Dio.netty.tryReflectionSetAccessible=true</argLine>
                     <filereports>PaimonTestSuite.txt</filereports>
                     <!--
                       the plugin does not support always now, we must be careful w/ singletons.

@@ -137,6 +137,7 @@ under the License.
          It MUST be a space-separated list not containing any newlines,
          of entries in the form '[-]{2}add-[opens|exports]=<module>/<package>=ALL-UNNAMED'.-->
         <paimon.connector.module.config/>
+        <extraJavaTestArgs.config/>
         <paimon.surefire.baseArgLine>-XX:+IgnoreUnrecognizedVMOptions ${paimon.connector.module.config}</paimon.surefire.baseArgLine>
     </properties>
 
