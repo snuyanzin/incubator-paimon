@@ -31,6 +31,11 @@ under the License.
     <artifactId>paimon-common</artifactId>
     <name>Paimon : Common</name>
 
+    <properties>
+        <paimon.connector.module.config><!-- Reuired by
+        HadoopConfigLoadingTest --> --add-opens=java.base/java.util=ALL-UNNAMED</paimon.connector.module.config>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.paimon</groupId>
